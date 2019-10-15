@@ -1,8 +1,8 @@
 # ECE 411 Practicum Project Ideas
 
 ### 1. Interactive Panel for PSU Campus Map
-- **Description**: An LED based interactive panel that show visitors locations of different campus buildings and departments within PSU
-- **Sensor**: touch sensor, buttons
+- **Description**: An LED based interactive panel that show visitors locations and information of different campus buildings and departments within PSU through LCD screen and speaker. Take users' inputs using touchscreen and voice control
+- **Sensor**: touch sensor, buttons, microphone
 - **Controller**: Atmel or Raspberry Pi or Arduino
 - **Actuator**: LEDs, speaker, touchscreen
 
