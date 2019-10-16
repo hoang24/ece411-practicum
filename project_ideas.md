@@ -7,10 +7,10 @@
 - **Actuator**: LEDs, speaker, and touchscreen.
 
 ### 2. Security Locker for Keys/Important Documents
-- **Description**: A secured locker to store important belonging such as keys, social sercurity cards, passports, bank account info, password info, etc. Sound alarm if detecting thefts
-- **Sensor**: PIN/password/finger print/etc.
+- **Description**: A wall mounted lock box that can be used to store important documents, keys or other personal effects to provide extra security and ease of access. This project will incorpoerate access control meaning a verification sensor such as a pinpad or RFID sensor to This    such as keys, social sercurity cards, passports, bank account info, password info, etc. Sound alarm if detecting thefts
+- **Sensor**: PIN/Password/Fingerprint/RFID etc.
 - **Controller**: Atmel or Raspberry Pi or Arduino
-- **Actuator**: speaker, LEDs, LCD screens
+- **Actuator**: Lock, Speaker, LEDs, LCD screens
 
 ### 3. Interactive Magic Mirror
 - **Description**: A magic mirror that plays music and displays weather, humidity, temperature, date and time info when a user look at the mirror
