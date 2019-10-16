@@ -4,7 +4,7 @@
 - **Description**: A PSU interactive map is a tool that show new students and visistors locations and information of different campus building and deparments within PSU through buttons, speaker, and LEDs. The basic idea is when people press buttons, LED at that location will turn on and speaker will tell them the name of a buliding based on PSU map.
 - **Sensor**: touch sensor, buttons, microphone
 - **Controller**: Atmel or Raspberry Pi or Arduino
-- **Actuator**: LEDs, speaker. 
+- **Actuator**: LEDs, speaker, and touchscreen.
 
 ### 2. Security Locker for Keys/Important Documents
 - **Description**: A secured locker to store important belonging such as keys, social sercurity cards, passports, bank account info, password info, etc. Sound alarm if detecting thefts
