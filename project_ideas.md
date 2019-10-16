@@ -1,7 +1,7 @@
 # ECE 411 Practicum Project Ideas
 
 ### 1. Interactive Panel for PSU Campus Map
-- **Description**: A PSU interactive map is a tool that show new students and visistors locations and information of different campus building and deparments within PSU through buttons, speaker, and LEDs. The basic idea is when people press buttons, LED at that location will turn on and speaker will tell them the name of a buliding based on PSU map.
+- **Description**: A PSU interactive map is a tool that show new students and visistors locations and information of different campus building and deparments within PSU through buttons, speaker, and LEDs. The basic idea is when people press a button, LED at that location will turn on and speaker will tell them the name of a buliding based on PSU map.
 - **Sensor**: touch sensor, buttons, microphone
 - **Controller**: Atmel or Raspberry Pi or Arduino
 - **Actuator**: LEDs, speaker, and touchscreen.
