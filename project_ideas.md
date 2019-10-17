@@ -18,6 +18,11 @@
 - **Controller**: Atmel or Raspberry Pi or Arduino
 - **Actuator**: LCD screens, LEDs, speaker
 
+### Final Project Selection
+- **Security Locker for Keys/Important Documents** 
+- As a team, we deliberated and selected the Security Locker as our Fall Practicum project. We felt that the locker was a legitimately usable product. In addition, this project could be developed with enough of a challenge without overwhelming our available time and team capacity. This is in contrast to the Magic Mirror and Interactive PSU map that we felt would require significantly more time than we had at our dispoal.
+
+
 ### Appendix: Project Ideas Generation
 Below is our method for selecting the top 3 ideas for the practicum projects. We sorted through 24 initial ideas by 2 categories: (1) how well it meets the requirement and (2) the project difficulty and decide the reasonable range (figure below). We then voted on the ideas within the reasonable range for the top 3.
 
