@@ -19,8 +19,8 @@
 - **Actuator**: LCD screens, LEDs, speaker
 
 ### Final Project Selection
-- **Security Locker for Keys/Important Documents** 
-- As a team, we deliberated and selected the Security Locker as our Fall Practicum project. We felt that the locker was a legitimately usable product. In addition, this project could be developed with enough of a challenge without overwhelming our available time and team capacity. This is in contrast to the Magic Mirror and Interactive PSU map that we felt would require significantly more time than we had at our dispoal.
+**Security Locker for Keys/Important Documents:** 
+As a team, we deliberated and selected the Security Locker as our Fall Practicum project. We felt that the locker was a legitimately usable product. In addition, this project could be developed with enough of a challenge without overwhelming our available time and team capacity. This is in contrast to the Magic Mirror and Interactive PSU map that we felt would require significantly more time than we had at our dispoal.
 
 
 ### Appendix: Project Ideas Generation
