@@ -1,4 +1,10 @@
-Practicum Homework #3: Product Design Specification (PDS)
-
+**Practicum Homework #3: Product Design Specification (PDS)**
 
 Security Locker for Keys/Important Documents
+
+
+Executive Summary / Concepts of Operations
+
+A wall mounted lock box that can be used to store important documents, keys or other personal effects to provide 
+extra security and ease of access. This project will incorporate access control meaning a verification sensor such as a pinpad or RFID
+sensor to determine if access has been granted to open the lock box. Such a device would consist of four main blocks of operation, a 
