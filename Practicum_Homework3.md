@@ -16,7 +16,7 @@ Our intended customers are people who need more space to store important things 
 the place for the box.
 The competition is all security boxes in the market. Two reasons make our security locker different from other security boxes
 in the market are: people can mount our lockbox to the wall so it does not take the place and accelerometer for theft detection.
-The price for wall mounted lockbox is around $30 because it is a reasonable price and wecan make a profit at that price.
+The price for wall mounted lockbox is around $30 because it is a reasonable price and we can make a profit at that price.
 
 **Requirements**
 
