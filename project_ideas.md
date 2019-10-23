@@ -26,4 +26,4 @@ As a team, we deliberated and selected the Security Locker as our Fall Practicum
 ### Appendix: Project Ideas Generation
 Below is our method for selecting the top 3 ideas for the practicum projects. We sorted through 24 initial ideas by 2 categories: (1) how well it meets the requirement and (2) the project difficulty and decide the reasonable range (figure below). We then voted on the ideas within the reasonable range for the top 3.
 
-![idea generation](idea_generation.jpg)
+![idea generation](images/idea_generation.jpg)
