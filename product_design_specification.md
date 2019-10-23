@@ -1,31 +1,25 @@
-# Practicum Homework #3: Product Design Specification (PDS)
+# Product Design Specification (PDS) - Practicum Homework #3
 
-### Security Locker for Keys/Important Documents
+### SeLo SECURITY LOCKER
 
 
-**Executive Summary / Concepts of Operations**
+#### Executive Summary / Concepts of Operations**
 
-A wall-mounted lockbox that can be used to store important documents, keys or other personal effects to provide 
-extra security and ease of access. With this product, people can have more space to store important things, but it is
-not occupy a lot of spaces. Everyone can easily use the wall-mounted clock to store documents, keys inside the box by entering 
-Pin/Password or FingerPrint to open or close the door.
+SeLo is a wall-mounted security locker to store important documents, keys or other personal items. SeLo helps occupy less space than traditional lockboxes, provide sufficient security and ease of access for people of all generations. This security locker can be mounted on the wall, and its owner can setup and open the box using PIN/password/finger print. SeLo will sound an alarm if thieves try wrong passwords or steal the box.
 
-**Brief Market Analysis**
+#### Brief Market Analysis
+- **Intended customers**: Suitable for people of all ages, those who need a secure place to store important items with more security and not occupy too much space in their house. 
+- **Competition**: Compete with all off-the-shelves lockers in the market. What make our SeLo security locker stands out is (1) ease of use, (2) theft detection, (3) use efficient space. 
+- **Expected price**: The price for SeLo is around $50. Most off-the-selves lockers are above $100 and they are heavy/use lots of space with unnecessary storage. We believe that $50 is a reasonable price that can cover the part costs while generating profits.
 
-Our intended customers are people who need more space to store important things with more security and they also do not want to take 
-the place for the box.
-The competition is all security boxes in the market. Two reasons make our security locker different from other security boxes
-in the market are: people can mount our lockbox to the wall so it does not take the place and accelerometer for theft detection.
-The price for wall mounted lockbox is around $50 because it is a reasonable price and we can make a profit at that price.
+#### Requirements
 
-**Requirements**
-
-A wall-mounted lockbox should hold about 5 kilograms. When people enter Pin/Password or FingerPrint the door should open/close
-within 10 seconds. Also, people can easily change Pin/Password by just entering old Pin/Password, press * key and enter new Pin/Password.
+A wall-mounted lockbox SHOULD hold about 10 kilograms. When people enter a correct PIN/passcode, the door MUST open/close
+within 5 seconds. Also, people SHOULD easily change PIN/passcode using their old PIN/passcode. When the PIN/passcode is entered wrong more than 3 times, or when the lockbox is moved without correct PIN/passcode, the alarm MUST sound.
 
 **System Architecture**
 
-
+![level 1 block diagram](images/level1_block_diagram.jpg)
 
 
 **Design Specification**
