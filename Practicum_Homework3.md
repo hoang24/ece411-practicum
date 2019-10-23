@@ -21,7 +21,7 @@ The price for wall mounted lockbox is around $50 because it is a reasonable pric
 **Requirements**
 
 A wall-mounted lockbox should hold about 5 kilograms. When people enter Pin/Password or FingerPrint the door should open/close
-within 10 seconds. Also, people can easily change Pin/Password by just entering old Pin/Password, press reset and enter new Pin/Password.
+within 10 seconds. Also, people can easily change Pin/Password by just entering old Pin/Password, press * key and enter new Pin/Password.
 
 **System Architecture**
 
