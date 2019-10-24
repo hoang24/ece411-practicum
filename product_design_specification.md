@@ -30,7 +30,7 @@ The SeLo security locker is an affordable, wall-mounted option to store importan
 
 **System Architecture**
 
-![level 1 block diagram](images/LockBox.jpg)
+![level 1 block diagram](images/LockBox.JPG)
 
 
 **Design Specification**
