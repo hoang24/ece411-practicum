@@ -1,6 +1,6 @@
-# Product Design Specification (PDS) - Practicum Homework #3
+# Product Design Specification (PDS) - Practicum HW #3
 
-### SeLo SECURITY LOCKER
+## SeLo SECURITY LOCKER
 
 
 #### Executive Summary / Concept of Operation**
