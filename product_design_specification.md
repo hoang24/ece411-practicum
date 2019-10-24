@@ -1,6 +1,6 @@
-# Product Design Specification (PDS) - Practicum HW #3
+# Product Design Specification (PDS) - Practicum Homework #3
 
-## SeLo SECURITY LOCKER
+### SeLo SECURITY LOCKER
 
 
 #### Executive Summary / Concept of Operation**
@@ -38,7 +38,7 @@ The SeLo security locker is an affordable, wall-mounted option that allows for p
 - **Sensor:** Pin/Password/FingerPrint/RFID, etc.
 - **Proccessor:**  Atmel ATMega32U4 8-bit Microcontroller.
 - **Actuator:** Motor, Lock, LEDs, LCD/Display; included in SHOULD category: accelerometer, surveilance camera & speaker.
-- **Power:** 5V + resistors.
+- **Power:** 9V Batteries; MAY use 5V power supply and current limiting resistors.
 - **Mechanical design:** SparkFun Motor Driver - Dual TB6612FNG (1A) to control door locking mechanism.
 - **Firmware:** Unlikely, but may need software to verify the Pin/Password or FingerPrint.
 - **Arduino:** Will use Arduino to communicate with the microcontroller.
