@@ -5,11 +5,11 @@
 
 #### Executive Summary / Concept of Operation**
 
-The SeLo security locker is an affordable, wall-mounted option to store important documents, keys or other personal items. SeLo helps occupy less space than traditional lockboxes, provide sufficient security and ease of access for people of all generations. This security locker can be mounted on the wall, and its owner can setup and open the box using PIN/password/finger print. SeLo will sound an alarm if thieves try wrong passwords or steal the box.
+The SeLo security locker is an affordable, wall-mounted option that allows for protected storage of sensitive documents, keys or valuable personal items. SeLo helps occupy less space than traditional lockboxes, provide sufficient security and ease of access for people of all generations. This security locker can be mounted on the wall, and its owner can setup and open the box using PIN/password/finger print. SeLo will sound an alarm if thieves try wrong passwords or steal the box.
 
 #### Brief Market Analysis
 - **Intended customers**: Suitable for people of all ages, those who need a secure place to store important items with more security and not occupy too much space in their house. 
-- **Competition**: Compete with all off-the-shelves lockers in the market. What make our SeLo security locker stands out is (1) ease of use, (2) theft detection, (3) use efficient space. 
+- **Competition**: Our unit competes in the same market as entry level safes and lockable cabinets manufactued by companies like SentrySafe, Master Lock and Barska. However, the SeLo securiy Locker is compact, affordable and packed with extra features like an electronic keypad and status display. 
 - **Expected price**: The price for SeLo is around $50. Most off-the-selves lockers are above $100 and they are heavy/use lots of space with unnecessary storage. We believe that $50 is a reasonable price that can cover the part costs while generating profits.
 
 #### Requirements
@@ -37,9 +37,9 @@ The SeLo security locker is an affordable, wall-mounted option to store importan
 - **Sensor:** Pin/Password/FingerPrint/RFID, etc.
 - **Proccessor:**  Atmel ATMega32U4 8-bit Microcontroller.
 - **Actuator:** Motor, Lock, LEDs, LCD/Display, SHOULD: accelerometer, surveilance camera & speaker.
-- **Power:** 5V, may need some resistors.
-- **Mechanical design:** SparkFun Motor Driver - Dual TB6612FNG (1A) as a motor to open and close the door.
-- **Firmware:** may need software to check whether the Pin/Password or FingerPrint is correct or not.
-- **Arduino:** may need to write code in Arduino software.
-- **Development environment:** environment safe.
+- **Power:** 5V + resistors.
+- **Mechanical design:** SparkFun Motor Driver - Dual TB6612FNG (1A) to control door locking mechanism.
+- **Firmware:** Unlikely, but may need software to verify the Pin/Password or FingerPrint.
+- **Arduino:** Will use Arduino to communicate with the microcontroller.
+- **Development environment:** Arduino run on Windows
 
