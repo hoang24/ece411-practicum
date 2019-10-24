@@ -14,16 +14,16 @@ SeLo is a wall-mounted security locker used to store important documents, keys o
 
 #### Requirements
 
-** MUST weigh less than 20 lbs
-** MUST be able to access contents within 5 seconds of entering passcode.
-** MUST cost less than $40 to produce
-** MUST be able to store at least 4 different passcodes
-** MUST be securable to a fixed surface
-** SHOULD be smaller than 12" x 12" x 5"
-** SHOULD be able to easily change PIN/passcode
-** SHOULD sound an alarm after 3 wrong passcode attempts 
-** MAY use a fingerprint sensor to activate lock
-** MAY have a camera to record activity
+- ** MUST weigh less than 20 lbs
+- ** MUST be able to access contents within 5 seconds of entering passcode.
+- ** MUST cost less than $40 to produce
+- ** MUST be able to store at least 4 different passcodes
+- ** MUST be securable to a fixed surface
+- ** SHOULD be smaller than 12" x 12" x 5"
+- ** SHOULD be able to easily change PIN/passcode
+- ** SHOULD sound an alarm after 3 wrong passcode attempts 
+- ** MAY use a fingerprint sensor to activate lock
+- ** MAY have a camera to record activity
 
 
 **System Architecture**
