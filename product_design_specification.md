@@ -15,7 +15,7 @@ SeLo is a wall-mounted security locker to store important documents, keys or oth
 #### Requirements
 
 A wall-mounted lockbox SHOULD hold about 10 kilograms. When people enter a correct PIN/passcode, the door MUST open/close
-within 5 seconds. Also, people SHOULD easily change PIN/passcode using their old PIN/passcode. When the PIN/passcode is entered wrong more than 3 times, or when the lockbox is moved without correct PIN/passcode, the alarm MUST sound.
+within 5 seconds. Also, people SHOULD easily change PIN/passcode using their old PIN/passcode. When the PIN/passcode is entered wrong more than 3 times, or when the lockbox is moved without correct PIN/passcode, the alarm MUST sound immediately. 
 
 **System Architecture**
 
