@@ -5,7 +5,7 @@
 
 #### Executive Summary / Concepts of Operations**
 
-SeLo is a wall-mounted security locker to store important documents, keys or other personal items. SeLo helps occupy less space than traditional lockboxes, provide sufficient security and ease of access for people of all generations. This security locker can be mounted on the wall, and its owner can setup and open the box using PIN/password/finger print. SeLo will sound an alarm if thieves try wrong passwords or steal the box.
+SeLo is a wall-mounted security locker used to store important documents, keys or other personal items. SeLo helps occupy less space than traditional lockboxes, provide sufficient security and ease of access for people of all generations. This security locker can be mounted on the wall, and its owner can setup and open the box using PIN/password/finger print. SeLo will sound an alarm if thieves try wrong passwords or steal the box.
 
 #### Brief Market Analysis
 - **Intended customers**: Suitable for people of all ages, those who need a secure place to store important items with more security and not occupy too much space in their house. 
@@ -14,8 +14,17 @@ SeLo is a wall-mounted security locker to store important documents, keys or oth
 
 #### Requirements
 
-A wall-mounted lockbox SHOULD hold about 10 kilograms. When people enter a correct PIN/passcode, the door MUST open/close
-within 5 seconds. Also, people SHOULD easily change PIN/passcode using their old PIN/passcode. When the PIN/passcode is entered wrong more than 3 times, or when the lockbox is moved without correct PIN/passcode, the alarm MUST sound immediately. 
+** MUST weigh less than 20 lbs
+** MUST be able to access contents within 5 seconds of entering passcode.
+** MUST cost less than $40 to produce
+** MUST be able to store at least 4 different passcodes
+** MUST be securable to a fixed surface
+** SHOULD be smaller than 12" x 12" x 5"
+** SHOULD be able to easily change PIN/passcode
+** SHOULD sound an alarm after 3 wrong passcode attempts 
+** MAY use a fingerprint sensor to activate lock
+** MAY have a camera to record activity
+
 
 **System Architecture**
 
