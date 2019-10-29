@@ -60,7 +60,7 @@ void loop() {
       Serial.print("This is what you've entered:");
       Serial.println(inputpswd);
     }
-    else if(inputIndex == pswdSize) //IF#2  //Check if it's as big as size of password
+    else if(inputIndex == pswdSize) //IF#2  //Check if it's as big as size of password, this else condition also keeps this code from running twice
     {
       Serial.println("it's the right size!");
  
