@@ -1,3 +1,8 @@
+// References: http://www.circuitbasics.com/how-to-set-up-a-keypad-on-an-arduino/ 
+//
+//
+//**********
+
 #include <Adafruit_Keypad.h>
 #include <EventBuffer.h>
 
@@ -35,6 +40,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   customKeypad.tick();
   char keyPress;
+  
 //  while(customKeypad.available()){ // note, the available() keypad seems to count one button press as 2 events
 //    keypadEvent e = customKeypad.read();
 //    Serial.print((char)e.bit.KEY);
@@ -51,31 +57,23 @@ void loop() {
        //Save it in input array
       inputpswd[inputIndex] = keyPress;
       inputIndex++; 
-      Serial.print("This is inputindex:");
-      Serial.println(inputIndex);
-      //Serial.println(inputpswd);
+      Serial.print("This is what you've entered:");
+      Serial.println(inputpswd);
     }
-
-    
-  //Check if it's as big as size of password
-    if(inputIndex == pswdSize) //IF#2
+    else if(inputIndex == pswdSize) //IF#2  //Check if it's as big as size of password
     {
-      inputpswd[inputIndex] = '\0';
-      String stringpswd = String(inputpswd);
       Serial.println("it's the right size!");
-       //If yes, check if it's the same password
+ 
+      inputpswd[inputIndex] = '\0';           //Add in null character for conversion to string
+      String stringpswd = String(inputpswd);  //Convert to stirng
+      
+      //If yes, check if it's the same password
       if(stringpswd == password) //IF#3
       {
         Serial.println("it's the same password!");
+        
         //If yes, send signal to motor
         openDoor = true;
-        
-        //clear the inputData array
-        memset(inputpswd, 0, sizeof(inputpswd));
-        
-        //reset inputIndex
-        inputIndex == 0;
-        Serial.println("password matched!");
       } //end IF#3
       else{
         Serial.println("It's not the same password!");
@@ -85,6 +83,11 @@ void loop() {
         Serial.println(inputpswd);
         openDoor = false;
       }
+       //clear the inputData array
+       memset(inputpswd, 0, sizeof(inputpswd));
+        
+       //reset inputIndex
+       inputIndex = 0;
     }//end IF#2
    }//end IF#1
   delay(10);
