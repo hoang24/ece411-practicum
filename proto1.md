@@ -12,8 +12,7 @@ For future work, we will implement a way to reset after the alarm sound. Right n
 
 ### Gallery:
 
-[[https://github.com/hoang24/ece411-practicum/blob/master/images/ece411_proto1_img0.jpeg|alt=proto1_img]]
-[[https://github.com/hoang24/ece411-practicum/blob/master/images/|alt=proto1]]
-
-
-[[https://github.com/hoang24/ece411-practicum/blob/master/images/idea_generation.jpg|alt=idea_generation]]
+![proto1_img](images/ece411_proto1_img0.jpeg)
+![proto1_img](images/ece411_proto1_img1.jpeg)
+![proto1_img](images/ece411_proto1_vid.jpeg)
+![Link to our image galery](images/)
