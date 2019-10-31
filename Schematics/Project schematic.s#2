@@ -4868,6 +4868,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="106.68" y="78.74" size="1.778" layer="97" grouprefs="PINPAD">pin 11 ~</text>
 <text x="139.7" y="68.58" size="1.778" layer="97" rot="R90" grouprefs="PINPAD">To pinpad pins</text>
 <text x="76.2" y="33.02" size="1.778" layer="97" grouprefs="BUZZER">Buzzer</text>
+<text x="50.8" y="66.04" size="1.778" layer="97">TO DO: FInish custom chip symbol</text>
 <text x="109.22" y="45.72" size="1.778" layer="97">To arduino pin 4</text>
 <text x="68.58" y="48.26" size="1.778" layer="97">To arduino pin 5~</text>
 <text x="2.54" y="116.84" size="1.778" layer="97" grouprefs="POWERRAILS">To arduino 5v output</text>
@@ -4877,10 +4878,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="86.36" y1="60.96" x2="86.36" y2="73.66" width="0.1524" layer="97"/>
 <wire x1="86.36" y1="73.66" x2="48.26" y2="73.66" width="0.1524" layer="97"/>
 <text x="27.94" y="35.56" size="1.778" layer="97" grouprefs="MOTOR">To arduino pin 3~</text>
-<text x="68.58" y="101.6" size="1.778" layer="97">Larger external components are not shown as they will not be on PCB</text>
-<text x="50.8" y="66.04" size="1.778" layer="97">To Do: Finish custom arduino symbol</text>
-<text x="68.58" y="96.52" size="1.778" layer="97">These connections are for the Elegoo Uno R3 board</text>
-<text x="68.58" y="111.76" size="3.81" layer="97">Lockbox circuit for ECE411</text>
 </plain>
 <instances>
 <instance part="SG1" gate="G$1" x="78.74" y="38.1" smashed="yes" grouprefs="BUZZER">

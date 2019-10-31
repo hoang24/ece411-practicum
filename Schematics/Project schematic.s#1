@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="2" display="yes" altdistance="0.5" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -70,6 +70,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -4796,6 +4797,38 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="ngspice-simulation" urn="urn:adsk.eagle:library:527439">
+<description>SPICE compatible library parts</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="0" urn="urn:adsk.eagle:symbol:527455/1" library_version="18">
+<description>Simulation ground symbol (spice node 0)</description>
+<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<pin name="0" x="0" y="0" visible="off" length="point" direction="sup"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GND" urn="urn:adsk.eagle:component:527478/1" prefix="X_" library_version="18">
+<description>Simulation ground symbol (spice node 0)</description>
+<gates>
+<gate name="G$1" symbol="0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="SPICEGROUND" value=""/>
+<attribute name="_EXTERNAL_" value=""/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -4805,64 +4838,196 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
+<groups>
+<schematic_group name="BUZZER"/>
+<schematic_group name="LED_INDICATOR"/>
+<schematic_group name="MOTOR"/>
+<schematic_group name="POWERRAILS"/>
+<schematic_group name="PINPAD"/>
+</groups>
 <parts>
 <part name="SG1" library="buzzer" library_urn="urn:adsk.eagle:library:113" deviceset="F/CM12P" device="" package3d_urn="urn:adsk.eagle:package:5265/1"/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="*_T679-?-1" device="E1F1" package3d_urn="urn:adsk.eagle:package:15861/1" technology="LG"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="330"/>
+<part name="X_1" library="ngspice-simulation" library_urn="urn:adsk.eagle:library:527439" deviceset="GND" device=""/>
+<part name="X_2" library="ngspice-simulation" library_urn="urn:adsk.eagle:library:527439" deviceset="GND" device=""/>
+<part name="X_3" library="ngspice-simulation" library_urn="urn:adsk.eagle:library:527439" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="4" y="44" size="1.778" layer="97">To Motor</text>
+<text x="1.46" y="33.84" size="1.778" layer="97" rot="R90" grouprefs="MOTOR">To Motor</text>
+<text x="101.6" y="66.04" size="1.778" layer="97" rot="R90" grouprefs="PINPAD">To Arduino Pins</text>
+<text x="106.68" y="68.58" size="1.778" layer="97" grouprefs="PINPAD">pin 7</text>
+<text x="106.68" y="71.12" size="1.778" layer="97" grouprefs="PINPAD">pin8</text>
+<text x="106.68" y="81.28" size="1.778" layer="97" grouprefs="PINPAD">pin 12</text>
+<text x="106.68" y="83.82" size="1.778" layer="97" grouprefs="PINPAD">pin 13</text>
+<text x="106.68" y="66.04" size="1.778" layer="97" grouprefs="PINPAD">pin 6 ~</text>
+<text x="106.68" y="76.2" size="1.778" layer="97" grouprefs="PINPAD">pin 10 ~</text>
+<text x="106.68" y="73.66" size="1.778" layer="97" grouprefs="PINPAD">pin 9 ~</text>
+<text x="106.68" y="78.74" size="1.778" layer="97" grouprefs="PINPAD">pin 11 ~</text>
+<text x="139.7" y="68.58" size="1.778" layer="97" rot="R90" grouprefs="PINPAD">To pinpad pins</text>
+<text x="76.2" y="33.02" size="1.778" layer="97" grouprefs="BUZZER">Buzzer</text>
+<text x="109.22" y="45.72" size="1.778" layer="97">To arduino pin 4</text>
+<text x="68.58" y="48.26" size="1.778" layer="97">To arduino pin 5~</text>
+<text x="2.54" y="116.84" size="1.778" layer="97" grouprefs="POWERRAILS">To arduino 5v output</text>
+<text x="27.94" y="116.84" size="1.778" layer="97" grouprefs="POWERRAILS">To arduino GND output</text>
+<wire x1="48.26" y1="73.66" x2="48.26" y2="60.96" width="0.1524" layer="97"/>
+<wire x1="48.26" y1="60.96" x2="86.36" y2="60.96" width="0.1524" layer="97"/>
+<wire x1="86.36" y1="60.96" x2="86.36" y2="73.66" width="0.1524" layer="97"/>
+<wire x1="86.36" y1="73.66" x2="48.26" y2="73.66" width="0.1524" layer="97"/>
+<text x="27.94" y="35.56" size="1.778" layer="97" grouprefs="MOTOR">To arduino pin 3~</text>
+<text x="68.58" y="101.6" size="1.778" layer="97">Larger external components are not shown as they will not be on PCB</text>
+<text x="50.8" y="66.04" size="1.778" layer="97">To Do: Finish custom arduino symbol</text>
+<text x="68.58" y="96.52" size="1.778" layer="97">These connections are for the Elegoo Uno R3 board</text>
 </plain>
 <instances>
-<instance part="SG1" gate="G$1" x="58.42" y="63.5" smashed="yes">
-<attribute name="NAME" x="55.88" y="69.85" size="1.778" layer="95"/>
-<attribute name="VALUE" x="64.77" y="63.5" size="1.778" layer="96"/>
+<instance part="SG1" gate="G$1" x="78.74" y="38.1" smashed="yes" grouprefs="BUZZER">
+<attribute name="NAME" x="76.2" y="44.45" size="1.778" layer="95"/>
+<attribute name="VALUE" x="85.09" y="38.1" size="1.778" layer="96"/>
 </instance>
-<instance part="LED1" gate="G$1" x="93.98" y="48.26" smashed="yes">
-<attribute name="NAME" x="97.536" y="43.688" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="99.695" y="43.688" size="1.778" layer="96" rot="R90"/>
+<instance part="LED1" gate="G$1" x="132.08" y="35.56" smashed="yes" rot="R270" grouprefs="LED_INDICATOR">
+<attribute name="NAME" x="135.128" y="32.004" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="135.128" y="29.845" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R1" gate="G$1" x="88.9" y="81.28" smashed="yes">
-<attribute name="NAME" x="85.09" y="82.7786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="85.09" y="77.978" size="1.778" layer="96"/>
+<instance part="R1" gate="G$1" x="121.92" y="35.56" smashed="yes" grouprefs="LED_INDICATOR">
+<attribute name="NAME" x="118.11" y="37.0586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="118.11" y="32.258" size="1.778" layer="96"/>
 </instance>
+<instance part="X_1" gate="G$1" x="91.44" y="30.48" smashed="yes" grouprefs="BUZZER"/>
+<instance part="X_2" gate="G$1" x="30.48" y="81.28" smashed="yes" grouprefs="POWERRAILS"/>
+<instance part="X_3" gate="G$1" x="142.24" y="33.02" smashed="yes" grouprefs="LED_INDICATOR"/>
 </instances>
 <busses>
 <bus name="5V">
 <segment>
-<wire x1="38.1" y1="66.04" x2="38.1" y2="33.02" width="0.762" layer="92"/>
-<label x="38.1" y="66.04" size="1.778" layer="95"/>
+<wire x1="12.7" y1="114.3" x2="12.7" y2="81.28" width="0.762" layer="92" grouprefs="POWERRAILS"/>
+<label x="15.24" y="81.28" size="1.778" layer="95"/>
 </segment>
 </bus>
 <bus name="GND">
 <segment>
-<wire x1="43.18" y1="66.04" x2="43.18" y2="33.02" width="0.762" layer="92"/>
-<label x="43.18" y="33.02" size="1.778" layer="95"/>
+<wire x1="30.48" y1="114.3" x2="30.48" y2="81.28" width="0.762" layer="92" grouprefs="POWERRAILS"/>
+<label x="30.48" y="81.28" size="1.778" layer="95" grouprefs="POWERRAILS"/>
 </segment>
 </bus>
 </busses>
 <nets>
 <net name="GND" class="0">
 <segment>
-<wire x1="5.08" y1="53.34" x2="35.56" y2="53.34" width="0.1524" layer="91"/>
-<label x="5.08" y="53.34" size="1.778" layer="95"/>
-<wire x1="35.56" y1="53.34" x2="35.56" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="71.12" x2="43.18" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="71.12" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="40.64" x2="35.56" y2="40.64" width="0.1524" layer="91" grouprefs="MOTOR"/>
+<label x="5.08" y="40.64" size="1.778" layer="95" grouprefs="MOTOR"/>
+<wire x1="35.56" y1="40.64" x2="35.56" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="91.44" x2="30.48" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V" class="0">
 <segment>
-<wire x1="5.08" y1="50.8" x2="38.1" y2="50.8" width="0.1524" layer="91"/>
-<label x="5.08" y="50.8" size="1.778" layer="95"/>
+<wire x1="5.08" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91" grouprefs="MOTOR"/>
+<label x="5.08" y="48.26" size="1.778" layer="95" grouprefs="MOTOR"/>
+<wire x1="22.86" y1="45.72" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="91.44" x2="12.7" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PWM" class="0">
 <segment>
-<wire x1="5.08" y1="48.26" x2="35.56" y2="48.26" width="0.1524" layer="91"/>
-<label x="5.08" y="48.26" size="1.778" layer="95"/>
+<wire x1="5.08" y1="35.56" x2="27.94" y2="35.56" width="0.1524" layer="91" grouprefs="MOTOR"/>
+<label x="5.08" y="35.56" size="1.778" layer="95" grouprefs="MOTOR"/>
+<junction x="27.94" y="35.56" grouprefs="MOTOR"/>
+</segment>
+</net>
+<net name="ROW1" class="0">
+<segment>
+<wire x1="111.76" y1="83.82" x2="137.16" y2="83.82" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="83.82" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="83.82" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="ROW2" class="0">
+<segment>
+<wire x1="111.76" y1="81.28" x2="137.16" y2="81.28" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="81.28" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="81.28" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="ROW3" class="0">
+<segment>
+<wire x1="111.76" y1="78.74" x2="137.16" y2="78.74" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="78.74" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="78.74" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="ROW4" class="0">
+<segment>
+<wire x1="111.76" y1="76.2" x2="137.16" y2="76.2" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="76.2" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="76.2" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="COL1" class="0">
+<segment>
+<wire x1="111.76" y1="73.66" x2="137.16" y2="73.66" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="73.66" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="73.66" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="COL2" class="0">
+<segment>
+<wire x1="111.76" y1="71.12" x2="137.16" y2="71.12" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="71.12" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="71.12" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="COL3" class="0">
+<segment>
+<wire x1="111.76" y1="68.58" x2="137.16" y2="68.58" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="68.58" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="68.58" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="COL4" class="0">
+<segment>
+<wire x1="111.76" y1="66.04" x2="137.16" y2="66.04" width="0.1524" layer="91" grouprefs="PINPAD"/>
+<label x="116.84" y="66.04" size="1.778" layer="95" grouprefs="PINPAD"/>
+<junction x="111.76" y="66.04" grouprefs="PINPAD"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="SG1" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="35.56" x2="68.58" y2="35.56" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<wire x1="68.58" y1="35.56" x2="68.58" y2="48.26" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<junction x="68.58" y="48.26"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="SG1" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="35.56" x2="91.44" y2="35.56" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<wire x1="91.44" y1="35.56" x2="91.44" y2="30.48" width="0.1524" layer="91" grouprefs="BUZZER"/>
+<pinref part="X_1" gate="G$1" pin="0"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<wire x1="134.62" y1="35.56" x2="142.24" y2="35.56" width="0.1524" layer="91" grouprefs="LED_INDICATOR"/>
+<wire x1="142.24" y1="35.56" x2="142.24" y2="33.02" width="0.1524" layer="91" grouprefs="LED_INDICATOR"/>
+<pinref part="X_3" gate="G$1" pin="0"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="116.84" y1="35.56" x2="109.22" y2="35.56" width="0.1524" layer="91" grouprefs="LED_INDICATOR"/>
+<wire x1="109.22" y1="35.56" x2="109.22" y2="43.18" width="0.1524" layer="91" grouprefs="LED_INDICATOR"/>
+<junction x="109.22" y="43.18"/>
 </segment>
 </net>
 </nets>
@@ -4885,6 +5050,11 @@ will not be understood (or retained) with this version.
 Since Version 8.3, EAGLE supports the association of 3D packages
 with devices in libraries, schematics, and board files. Those 3D
 packages will not be understood (or retained) with this version.
+</note>
+<note version="9.5" severity="warning">
+Since Version 9.5, EAGLE supports persistent groups with
+schematics, and board files. Those persistent groups
+will not be understood (or retained) with this version.
 </note>
 <note version="8.4" severity="warning">
 Since Version 8.4, EAGLE supports properties for SPICE simulation. 
