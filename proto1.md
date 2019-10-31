@@ -14,5 +14,5 @@ For future work, we will implement a way to reset after the alarm sound. Right n
 
 ![proto1_img](images/ece411_proto1_img0.jpeg)
 ![proto1_img](images/ece411_proto1_img1.jpeg)
-![proto1_img](images/ece411_proto1_vid.jpeg)
-![Link to our image galery](images/)
+
+![Link to video of our prototype 1](images/ece411_proto1_vid.MOV)
