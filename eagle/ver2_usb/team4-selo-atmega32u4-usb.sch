@@ -13378,6 +13378,11 @@ Attribution ShareAlike (CC BY-SA)</text>
 <text x="175.26" y="83.82" size="1.778" layer="97">D10#</text>
 <text x="175.26" y="81.28" size="1.778" layer="97">D11#</text>
 <text x="175.26" y="78.74" size="1.778" layer="97">D12/A10</text>
+<wire x1="187.96" y1="127" x2="256.54" y2="127" width="0.1524" layer="97"/>
+<wire x1="256.54" y1="127" x2="256.54" y2="73.66" width="0.1524" layer="97"/>
+<wire x1="256.54" y1="73.66" x2="187.96" y2="73.66" width="0.1524" layer="97"/>
+<wire x1="187.96" y1="73.66" x2="187.96" y2="127" width="0.1524" layer="97"/>
+<text x="187.96" y="124.46" size="1.778" layer="97">SeLo I/O Control System</text>
 </plain>
 <instances>
 <instance part="U3" gate="G$1" x="154.94" y="96.52" smashed="yes">
