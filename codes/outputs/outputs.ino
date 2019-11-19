@@ -1,13 +1,30 @@
 #include <Servo.h>
 
-// Inputs
-int openButton = 4;
-int closeButton = 5;
-int theftButton = 8;
+// Inputs -- Uncomment the appropriate section depending on which device we are using
+int openButton = 4; //for arduino
+int closeButton = 5; //for arduino
+int theftButton = 8; //for arduino
 
-// Outputs
-int buzzer = 12;
-int redLED = 13;
+//int openButton = 6; //for 328p 
+//int closeButton = 11; //for 328p
+//int theftButton = 14; //for 328p
+
+//int openButton = 25; //for 32u4
+//int closeButton = 31; //for 32u4
+//int theftButton = 28; //for 32u4
+
+
+// Outputs -- Uncomment the appropriate section depending on which device we are using
+
+int buzzer = 12; //for arduino
+int redLED = 13; //for arduino
+
+//int buzzer = 18; //for 328p
+//int redLED = 19; //for 328p
+
+//int buzzer = 26; //for 32u4
+//int redLED = 32; //for 32u4
+
 Servo myservo;
 int closePosition = 0; //CHANGE ME
 int openPosition = 180; //CHANGE ME
