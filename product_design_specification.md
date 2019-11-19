@@ -34,10 +34,10 @@ The SeLo security locker is an affordable, wall-mounted option that allows for p
 
 
 **Design Specification**
-- **Sensor:** Numeric Keypad with four letters.
+- **Sensor:** Alphanumeric Keypad consisting of four letters A,B,C & D.
 - **Proccessor:**  Atmel ATMega32U4 8-bit Microcontroller.
 - **Actuator:** Motor, Lock, LEDs, LCD/Display; included in SHOULD category: accelerometer, surveilance camera & speaker.
-- **Power:** 9V Batteries; MAY use 5V power supply and current limiting resistors.
+- **Power:** 5V power supply and current limiting resistors.
 - **Mechanical design:** SparkFun Motor Driver - Dual TB6612FNG (1A) to control door locking mechanism.
 - **Firmware:** Unlikely, but may need software to verify the Pin.
 - **Arduino:** Will use Arduino to communicate with the microcontroller.
