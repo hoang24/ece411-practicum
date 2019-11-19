@@ -159,14 +159,16 @@
 <plain>
 <text x="19.508" y="20.742996875" size="0.625" layer="21" font="vector" ratio="20">RX</text>
 <text x="13.606003125" y="20.742996875" size="0.625" layer="21" font="vector" ratio="20">TX</text>
-<text x="53.2" y="28.4" size="0.3048" layer="21" font="vector" ratio="20">USER</text>
+<text x="53.581" y="26.495" size="0.3048" layer="21" font="vector" ratio="20">USER</text>
 <wire x1="0" y1="0" x2="65" y2="0" width="0" layer="20"/>
 <wire x1="65" y1="0" x2="65" y2="36" width="0" layer="20"/>
 <wire x1="65" y1="36" x2="0" y2="36" width="0" layer="20"/>
 <wire x1="0" y1="36" x2="0" y2="0" width="0" layer="20"/>
-<text x="1" y="11" size="0.8" layer="21" font="vector" ratio="20">ECE411 32u4 Board Rev 1
+<text x="8" y="32" size="0.6096" layer="21" font="vector" ratio="20">ECE411 32u4 Board Rev 1
 Based on Arduino Lilypad Rev 10
 CC by-SA</text>
+<text x="15" y="30" size="0.6096" layer="21" font="vector">Team 4 - version#1
+SeLo - Security Locker</text>
 </plain>
 <libraries>
 <library name="SparkFun-Electromechanical">
