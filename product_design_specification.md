@@ -24,8 +24,6 @@ The SeLo security locker is an affordable, wall-mounted option that allows for p
 -  SHOULD be able to store at least 4 different passcodes
 -  SHOULD be able to easily change or alter PIN
 -  SHOULD sound an alarm after 3 wrong PIN attempts 
--  MAY use a fingerprint sensor to activate lock
--  MAY have a camera to record activity
 -  MAY be weather resistant
 
 **System Architecture**
