@@ -21,7 +21,7 @@
 <layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -157,7 +157,7 @@
 </layers>
 <board>
 <plain>
-<text x="19.508" y="20.742996875" size="0.625" layer="21" font="vector" ratio="20">RX</text>
+<text x="19.508" y="20.615996875" size="0.625" layer="21" font="vector" ratio="20">RX</text>
 <text x="13.606003125" y="20.742996875" size="0.625" layer="21" font="vector" ratio="20">TX</text>
 <text x="53.581" y="26.495" size="0.3048" layer="21" font="vector" ratio="20">USER</text>
 <wire x1="0" y1="0" x2="65" y2="0" width="0" layer="20"/>
@@ -1924,7 +1924,7 @@ Copyright: Würth Elektronik</description>
 <clearance class="1" value="0.254"/>
 </class>
 </classes>
-<designrules name="oshpark-2layer *">
+<designrules name="oshpark-2layer">
 <description language="en">&lt;b&gt;OSH Park Design Rules&lt;/b&gt;
 &lt;p&gt;
 Please make sure your boards conform to these design rules.
@@ -2137,20 +2137,20 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CONN HEADER VERT 6POS 2ROW 2.54MM" x="27.4" y="16.2" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Harwin" x="19" y="41.6" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="M20-9980345" x="19" y="41.6" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="24.29" y="18.975" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="22.639" y="18.594" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="23.59" y="11.755" size="1.27" layer="27"/>
 </element>
 <element name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10K" x="27.4" y="12.2" smashed="yes" rot="R180">
 <attribute name="DESC" value="RES SMD 10K OHM 1% 1/8W 0805" x="27.4" y="12.2" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MFR" value="Yageo" x="61.2" y="-0.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="RC0805FR-0710KL" x="61.2" y="-0.4" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="24.465" y="11.87" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="24.592" y="12.632" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="85" x="61.2" y="-0.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="61.2" y="-0.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="28.035" y="14.74" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" package="P1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPPAD1-13" x="32.8" y="14.6" smashed="yes">
-<attribute name="NAME" x="31.884" y="15.97" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="32.011" y="12.541" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="12" x="-28" y="-5.8" size="1.778" layer="27" display="off"/>
 <attribute name="TP_SIGNAL_NAME" value="" x="31.53" y="12.06" size="1" layer="37"/>
 <attribute name="VALUE" x="32.8" y="14.6" size="0.0254" layer="27"/>
@@ -2166,7 +2166,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 30PF 50V C0G/NP0 0805" x="35.8" y="4.1" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Samsung" x="-5" y="-36.7" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="CL21C300JBANNNC" x="-5" y="-36.7" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="34.9" y="2.375" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="32.106" y="3.772" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="52" x="-5" y="-36.7" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="-5" y="-36.7" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="34.8" y="2.2" size="1.016" layer="27"/>
@@ -2175,7 +2175,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 30PF 50V C0G/NP0 0805" x="43.4" y="4.1" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MFR" value="Samsung" x="88" y="49.7" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="CL21C180JBANNNC" x="88" y="49.7" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="42.6" y="2.375" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="45.521" y="3.899" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="52" x="88" y="49.7" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="88" y="49.7" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="44.4" y="6" size="1.016" layer="27" rot="R180"/>
@@ -2200,7 +2200,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 4.7UF 16V X5R 0805" x="7" y="28.6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MFR" value="Samsung" x="7" y="28.6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="CL21A475KOFNNNE" x="7" y="28.6" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="6.1" y="26.875" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="5.719" y="26.748" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="52" x="7" y="28.6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="7" y="28.6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="8" y="30.5" size="1.016" layer="27" rot="R180"/>
@@ -2209,7 +2209,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="RES SMD 22 OHM 1% 1/8W 0805" x="11.1" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Yageo" x="11.1" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="RC0805FR-0722RL" x="11.1" y="25.4" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="10.565" y="26.47" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="9.041" y="26.343" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="85" x="11.1" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="11.1" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="10.465" y="22.86" size="1.27" layer="27"/>
@@ -2218,7 +2218,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="RES SMD 22 OHM 1% 1/8W 0805" x="11.1" y="23.2" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Yageo" x="11.1" y="23.2" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="RC0805FR-0722RL" x="11.1" y="23.2" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="10.565" y="21.57" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="10.565" y="21.443" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="85" x="11.1" y="23.2" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="11.1" y="23.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="10.465" y="20.66" size="1.27" layer="27"/>
@@ -2236,14 +2236,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="LED GREEN CLEAR 0805 SMD" x="44.941" y="31.994" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Würth Elektronik" x="44.941" y="31.994" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="150080GS75000" x="44.941" y="31.994" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="50.971" y="30.524" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="51.479" y="33.23" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="54.481" y="29.724" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1K" x="18.4" y="17.1" smashed="yes" rot="R270">
 <attribute name="DESC" value="RES SMD 1K OHM 1% 1/8W 0805" x="25.4" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MFR" value="Yageo" x="25.4" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="RC0805FR-071KL" x="25.4" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="20.03" y="16.565" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="20.157" y="17.073" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="POPULARITY" value="85" x="25.4" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="25.4" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="15.86" y="17.735" size="1.27" layer="27" rot="R270"/>
@@ -2252,14 +2252,14 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="LED GREEN CLEAR 0805 SMD" x="11.4" y="22" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Würth Elektronik" x="11.4" y="22" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="150080GS75000" x="11.4" y="22" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="19.93" y="19.43" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="20.184" y="19.43" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="20.94" y="19.73" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1K" x="15.8" y="17.1" smashed="yes" rot="R270">
 <attribute name="DESC" value="RES SMD 1K OHM 1% 1/8W 0805" x="22.8" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MFR" value="Yageo" x="22.8" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="RC0805FR-071KL" x="22.8" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="14.73" y="16.465" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="14.603" y="16.465" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="POPULARITY" value="85" x="22.8" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="22.8" y="17.1" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="13.26" y="17.735" size="1.27" layer="27" rot="R270"/>
@@ -2268,7 +2268,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="LED GREEN CLEAR 0805 SMD" x="8.8" y="22" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Würth Elektronik" x="8.8" y="22" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="150080GS75000" x="8.8" y="22" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="14.83" y="19.53" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="14.703" y="19.403" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="18.34" y="19.73" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100n" x="37.6" y="33.3" smashed="yes" rot="R90">
@@ -2284,7 +2284,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 1UF 16V X7R 0805" x="27.6" y="24" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MFR" value="Samsung" x="27.6" y="24" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="CL21B105KOFNNNG" x="27.6" y="24" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="27" y="22.275" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="24.46" y="23.291" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="52" x="27.6" y="24" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="27.6" y="24" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="28.6" y="25.9" size="1.016" layer="27" rot="R180"/>
@@ -2293,7 +2293,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 0.1UF 50V X7R 0805" x="34.2" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MFR" value="Samsung" x="34.2" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="CL21B104KBCNNNC" x="34.2" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="33.125" y="30.3" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="32.744" y="30.681" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="POPULARITY" value="52" x="34.2" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="34.2" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="36.1" y="29.8" size="1.016" layer="27" rot="R90"/>
@@ -2311,7 +2311,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 0.1UF 50V X7R 0805" x="45.7" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MFR" value="Samsung" x="45.7" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="CL21B104KBCNNNC" x="45.7" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="44.625" y="31.1" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="46.497" y="33.576" size="0.625" layer="25" font="vector" ratio="20" rot="R180"/>
 <attribute name="POPULARITY" value="52" x="45.7" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="45.7" y="30.8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="47.6" y="29.8" size="1.016" layer="27" rot="R90"/>
@@ -2320,7 +2320,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 0.1UF 50V X7R 0805" x="36.1" y="12.6" size="1.778" layer="27" display="off"/>
 <attribute name="MFR" value="Samsung" x="36.1" y="12.6" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="CL21B104KBCNNNC" x="36.1" y="12.6" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="35.5" y="13.675" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="36.135" y="13.929" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="52" x="36.1" y="12.6" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="36.1" y="12.6" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="35.1" y="10.7" size="1.016" layer="27"/>
@@ -2329,7 +2329,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="RES SMD 10K OHM 1% 1/8W 0805" x="48.1" y="30.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MFR" value="Yageo" x="48.1" y="30.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="RC0805FR-0710KL" x="48.1" y="30.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="49.83" y="30.265" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="48.729" y="33.447" size="0.625" layer="25" font="vector" ratio="20" rot="R180"/>
 <attribute name="POPULARITY" value="85" x="48.1" y="30.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="48.1" y="30.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="45.56" y="31.435" size="1.27" layer="27" rot="R270"/>
@@ -2344,12 +2344,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="18.365" y="0.46" size="1.27" layer="27"/>
 </element>
 <element name="SERVO" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X03" package3d_urn="urn:adsk.eagle:package:22458/2" value="" x="56" y="6" smashed="yes" rot="R180">
-<attribute name="NAME" x="59.8862" y="4.1712" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="NAME" x="58.7432" y="3.9172" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="POPULARITY" value="92" x="56" y="6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="59.81" y="9.175" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="NUMPAD" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X08" package3d_urn="urn:adsk.eagle:package:22409/2" value="" x="62" y="19" smashed="yes" rot="R270">
-<attribute name="NAME" x="63.8288" y="29.2362" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="56.7428" y="29.4118" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="67" x="62" y="19" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="58.825" y="29.16" size="1.27" layer="27" rot="R270"/>
 </element>
