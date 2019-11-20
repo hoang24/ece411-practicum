@@ -13383,6 +13383,10 @@ Attribution ShareAlike (CC BY-SA)</text>
 <wire x1="256.54" y1="73.66" x2="187.96" y2="73.66" width="0.1524" layer="97"/>
 <wire x1="187.96" y1="73.66" x2="187.96" y2="127" width="0.1524" layer="97"/>
 <text x="187.96" y="124.46" size="1.778" layer="97">SeLo I/O Control System</text>
+<text x="327.66" y="25.4" size="1.778" layer="97">SeLo Security Locker
+An affordable, wall-mounted, and easy-to-use security locker that can be locked/unlocked 
+using PINs and incorporate thief detection.</text>
+<text x="339.852" y="7.112" size="2.54" layer="97">1</text>
 </plain>
 <instances>
 <instance part="U3" gate="G$1" x="154.94" y="96.52" smashed="yes">
@@ -13804,7 +13808,6 @@ Attribution ShareAlike (CC BY-SA)</text>
 </net>
 <net name="VBUS" class="0">
 <segment>
-<wire x1="132.08" y1="111.76" x2="132.08" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="VBUS"/>
 <wire x1="132.08" y1="109.22" x2="137.16" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="VBUS2" gate="1" pin="VBUS"/>
@@ -13874,6 +13877,13 @@ Attribution ShareAlike (CC BY-SA)</text>
 <wire x1="279.4" y1="99.06" x2="279.4" y2="96.52" width="0.1524" layer="91"/>
 <junction x="279.4" y="96.52"/>
 <pinref part="VBUS6" gate="1" pin="VBUS"/>
+</segment>
+<segment>
+<wire x1="134.62" y1="153.67" x2="134.62" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="VBUS7" gate="1" pin="VBUS"/>
+<wire x1="134.62" y1="152.4" x2="134.62" y2="151.13" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="154.94" x2="134.62" y2="153.67" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -14140,12 +14150,6 @@ Attribution ShareAlike (CC BY-SA)</text>
 <pinref part="BUZZER" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="N$3" class="0">
-<segment>
-<wire x1="134.62" y1="153.67" x2="134.62" y2="151.13" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-</segment>
-</net>
 </nets>
 </sheet>
 <sheet>
@@ -14160,9 +14164,10 @@ Attribution ShareAlike (CC BY-SA)</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,162.56,233.68,U1,VIN,VBUS,,,"/>
-<approved hash="104,1,182.88,233.68,U1,VBAT,V_BATT,,,"/>
-<approved hash="104,1,182.88,228.6,U1,VSS,GND,,,"/>
+<approved hash="113,1,198.742,105.606,SERVO,,,,,"/>
+<approved hash="113,1,209.888,86.1644,NUMPAD,,,,,"/>
+<approved hash="113,1,222.258,117.036,BUZZER,,,,,"/>
+<approved hash="113,1,238.997,99.2556,LEDS,,,,,"/>
 </errors>
 </schematic>
 </drawing>
