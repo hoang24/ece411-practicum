@@ -1,4 +1,5 @@
 # PCB Design Review
+We got feedback on our board layout from a few different teams as well as our TA Eric. We took into account many of the suggestions and implemented them before submitting our CAD file for printing.
 
 # Recommendations and Suggestions:
 * Include vias next to all the ground connections for your components.
