@@ -159,7 +159,7 @@
 <plain>
 <text x="19.508" y="20.615996875" size="0.625" layer="21" font="vector" ratio="20">RX</text>
 <text x="13.606003125" y="20.742996875" size="0.625" layer="21" font="vector" ratio="20">TX</text>
-<text x="53.581" y="26.495" size="0.3048" layer="21" font="vector" ratio="20">USER</text>
+<text x="53.454" y="29.035" size="0.3048" layer="21" font="vector" ratio="20">USER</text>
 <wire x1="0" y1="0" x2="65" y2="0" width="0" layer="20"/>
 <wire x1="65" y1="0" x2="65" y2="36" width="0" layer="20"/>
 <wire x1="65" y1="36" x2="0" y2="36" width="0" layer="20"/>
@@ -1924,7 +1924,7 @@ Copyright: Würth Elektronik</description>
 <clearance class="1" value="0.254"/>
 </class>
 </classes>
-<designrules name="oshpark-2layer">
+<designrules name="oshpark-2layer *">
 <description language="en">&lt;b&gt;OSH Park Design Rules&lt;/b&gt;
 &lt;p&gt;
 Please make sure your boards conform to these design rules.
@@ -1986,7 +1986,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <param name="mlMaxStopFrame" value="2.5mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="0mil"/>
+<param name="mlViaStopLimit" value="0.4mm"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -2227,7 +2227,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="RES SMD 1K OHM 1% 1/8W 0805" x="51.9" y="20.2" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MFR" value="Yageo" x="51.9" y="20.2" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="RC0805FR-071KL" x="51.9" y="20.2" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="51.165" y="25.57" size="0.625" layer="25" font="vector" ratio="20"/>
+<attribute name="NAME" x="55.737" y="26.84" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="85" x="51.9" y="20.2" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="51.9" y="20.2" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="52.535" y="29.74" size="1.27" layer="27" rot="R180"/>
@@ -2302,7 +2302,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="DESC" value="CAP CER 0.1UF 50V X7R 0805" x="51.3" y="19.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MFR" value="Samsung" x="51.3" y="19.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="CL21B104KBCNNNC" x="51.3" y="19.8" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="53.025" y="19.3" size="0.625" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="50.923" y="17.079" size="0.625" layer="25" font="vector" ratio="20"/>
 <attribute name="POPULARITY" value="52" x="51.3" y="19.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="51.3" y="19.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="49.4" y="20.8" size="1.016" layer="27" rot="R270"/>
@@ -2354,12 +2354,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="58.825" y="29.16" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="BUZZER" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="14" y="11" smashed="yes" rot="R270">
-<attribute name="NAME" x="15.8288" y="13.6162" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="11.1488" y="6.6848" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="98" x="14" y="11" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="10.825" y="13.54" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="LEDS" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="9" y="4" smashed="yes" rot="R90">
-<attribute name="NAME" x="7.1712" y="1.3838" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="7.0442" y="2.0188" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="POPULARITY" value="98" x="9" y="4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="12.175" y="1.46" size="1.27" layer="27" rot="R90"/>
 </element>
