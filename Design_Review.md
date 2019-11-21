@@ -1,7 +1,7 @@
 # PCB Design Review
 
 # Recommendations and Suggestions:
-* Include vias next to all the ground connections for all your components.
+* Include vias next to all the ground connections for your components.
 * Check the ATMega chip output pins that are connected to your servo to ensure they are PWM capable.
 * Label inputs and outputs on schematic
 
