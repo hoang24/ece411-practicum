@@ -8,6 +8,7 @@ We got feedback on our board layout from a few different teams as well as our TA
 * Correct minor spelling mistakes in description
 * Double check DRC errors and warnings (clear up or approve)
   - Errors related to USB port like clearance and missing values should be approved
+  ![ERC](images/erc.png)
 
 # Compliments:
 * The layout looks very good
