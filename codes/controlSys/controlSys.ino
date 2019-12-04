@@ -3,7 +3,7 @@
 // Script to control the input (numpad) and outputs (LEDs, buzzers, motors) using the Atmel ATMega32U4 microprocessor
 
 #include <Adafruit_Keypad.h>
-#include <EventBuffer.h>
+#include <Adafruit_Keypad_Ringbuffer.h>
 #include <Servo.h>
 
 #define MAXINPUT 20
@@ -18,18 +18,8 @@ char hexaKeys[ROWS][COLS] = {
   {'*', '0', '#', 'D'}
 };
 
-// //////////////////////////////////////////////////////////
-//ROW & PIN COLUMNS -- UNCOMMENT THE SECTION APPROPRIATE FOR THE DEVICE WE ARE USING AT THE TIME
-//byte rowPins[ROWS] = {13, 12, 11, 10}; //for arduino
-//byte colPins[COLS] = {9, 8, 7, 6}; //for arduino
-
-//byte rowPins[ROWS] = {19, 18, 17, 16}; //for 328P
-//byte colPins[COLS] = {15, 14, 13, 12}; //for 328P
-//
-byte rowPins[ROWS] = {32, 26, 12, 30}; //for 32U4
-byte colPins[COLS] = {29, 28, 1, 27}; //for 32U4
-/////////////////////////////////////////////////////////////
-
+byte rowPins[ROWS] = {12, 11, 10, 9}; //for 32U4
+byte colPins[COLS] = {8, 7, 6, 5}; //for 32U4
 
 Adafruit_Keypad customKeypad = Adafruit_Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
 char password[] = "1234"; 
@@ -42,22 +32,15 @@ bool theft = false;
 int trial = 0;
 
 /////////////////////////////////////////// 
-//Outputs -- Uncomment the appropriate section depending on which device we are using
-
-//int buzzer = 12; //for arduino
-//int redLED = 13; //for arduino
-
-//int buzzer = 18; //for 328p
-//int redLED = 19; //for 328p
-
-int buzzer = 26; //for 32u4
-int redLED = 32; //for 32u4
-
-///////////////////////////////////////////
+// INPUTS
+int buzzer = 2; //for 32u4
+int redLED = 4; //for 32u4
+int servo = 3;
 Servo myservo;
 int closePosition = 180; //CHANGE ME
 int openPosition = 90; //CHANGE ME
 
+///////////////////////////////////////////
 void setup(){
   // INPUTS
   Serial.begin(9600);
@@ -70,7 +53,7 @@ void setup(){
   // OUTPUTS
   pinMode(buzzer, OUTPUT);
   pinMode(redLED, OUTPUT);
-  myservo.attach(3);  // attaches the servo on pin 9 to the servo object
+  myservo.attach(servo);  // attaches the servo on pin 9 to the servo object
   myservo.write(openPosition);
 }
   
