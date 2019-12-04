@@ -3,7 +3,7 @@
 // Script to control the input (numpad) and outputs (LEDs, buzzers, motors) using the Atmel ATMega32U4 microprocessor
 
 #include <Adafruit_Keypad.h>
-#include <Adafruit_Keypad_Ringbuffer.h>
+//#include <Adafruit_Keypad_Ringbuffer.h>
 #include <Servo.h>
 
 #define MAXINPUT 20
@@ -17,13 +17,11 @@ char hexaKeys[ROWS][COLS] = {
   {'7', '8', '9', 'C'},
   {'*', '0', '#', 'D'}
 };
-
-byte rowPins[ROWS] = {12, 11, 10, 9}; //for 32U4
-byte colPins[COLS] = {8, 7, 6, 5}; //for 32U4
-
+byte rowPins[ROWS] = {12, 11, 10, 9};
+byte colPins[COLS] = {8, 7, 6, 5};
 Adafruit_Keypad customKeypad = Adafruit_Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
 char password[] = "1234"; 
-char changePSWDKey[] = "****";
+char changePSWDKey[] = "****";//Command to change the password
 int pswdSize = 0;
 char inputpswd[MAXINPUT] = {}; //initiate input to empty 
 int inputIndex = 0;
@@ -31,16 +29,14 @@ bool lock = false;
 bool theft = false;
 int trial = 0;
 
-/////////////////////////////////////////// 
-// INPUTS
-int buzzer = 2; //for 32u4
-int redLED = 4; //for 32u4
+// OUTPUTS
+int buzzer = 2;
+int redLED = 4;
 int servo = 3;
 Servo myservo;
 int closePosition = 180; //CHANGE ME
 int openPosition = 90; //CHANGE ME
 
-///////////////////////////////////////////
 void setup(){
   // INPUTS
   Serial.begin(9600);
@@ -56,75 +52,68 @@ void setup(){
   myservo.attach(servo);  // attaches the servo on pin 9 to the servo object
   myservo.write(openPosition);
 }
-  
+
 void loop() {
   // INPUTS
   customKeypad.tick();
   char keyPress;
-  int status = 0; 
-/////////////////////////////////////
-  //if the door is open
+ int ErrorMarker = 0; 
+
+  //if the door is open you can change the password
   if(myservo.read() == openPosition)
   {
-    //check if keys have been pressed
     if(customKeypad.available())
     {
       char * destination = inputpswd;
-      int * index = &inputIndex;
-      
-      //Read in key-presses
-      status = readKeyPresses(destination, index); 
-      
-      if(inputIndex = sizeof(changePSWDKey))
+      int * index = &inputIndex; 
+      ErrorMarker = readKeyPresses(destination, index);
+
+      if(inputIndex == sizeof(changePSWDKey) - 1)// -1 to account for null character at end of string
       {
-        Serial.println("Enter a new 4-digit password");
-
-        memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
-        inputIndex = 0; // reset inputIndex
-
-        //loop until keyPress is availalbe
-        //read the key
-        //do this until 4 keys are done 
-        for (int i = 0; i < 4; i++)
+        String stringpswd = String(inputpswd); // Convert to stirng
+        
+        if(stringpswd == changePSWDKey)//now check if the password matches
         {
-          int loopDiLoop = 0;
-          do
+          Serial.println("Ready to receive new password! Enter a 4-digit password");
+          memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
+          inputIndex = 0; // reset inputIndex
+  
+          //loop until keyPress is availalbe
+          //read the key
+          //do this until 4 keys are done 
+          while((*index) < 4)
           {
-            loopDiLoop++; //delay loop
-          }while (!customKeypad.available()); //Loop until key press is available
-
-         if(customKeypad.available())
-         {
+            customKeypad.tick(); //check for a key press
             char * destination = password;
-            int * index = &inputIndex;    
-            status = readKeyPresses(destination, index);        
-         }
-        }
+            int * index = &inputIndex; 
+            if(customKeypad.available()) // read the key press when it's available
+            {
+              ErrorMarker = readKeyPresses(destination, index);        
+            }
+          }
 
-        Serial.print("The new password is: "); 
-        Serial.print(password);
-        Serial.println();
+          //At this point, the new four digit password has been entered
+          Serial.println("This is the new password: ");
+          Serial.print(password);
+        }
+        else 
+        {
+           memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
+          inputIndex = 0; // reset inputIndex
+        }
       }
     }
-  }
-/////////////////////////////////
+  }//Just generally read key presses 
+  else if(customKeypad.available()){
+      char * destination = inputpswd;
+      int * index = &inputIndex; 
+      ErrorMarker = readKeyPresses(destination, index);
 
-  if(customKeypad.available()){
-    char * destination = inputpswd;
-    int * index = &inputIndex;
-      
-    //Read in key-presses
-    status = readKeyPresses(destination, index); 
-
-    //Is the number of keys pressed equal to the size of the password? 
     if (inputIndex == pswdSize) {
       Serial.println();
-
-      //Convert keypresses from user input into a string for comparison
       inputpswd[inputIndex] = '\0'; // Add in null character for conversion to string
       String stringpswd = String(inputpswd); // Convert to stirng
 
-      //Does the input password match the stored password? 
       if (stringpswd == password) {
         Serial.println("PIN IS CORRECT!");
         Serial.print("Enter a ");
@@ -133,30 +122,23 @@ void loop() {
         lock = !(lock);
         trial = 0;
       }
-      else
-        {
+      else{
         Serial.print("PIN IS INCORRECT. ATTEMPTS LEFT: ");
         Serial.println(3 - trial);
-         
-        if (trial < 3) 
-          {
-            Serial.print("Enter a ");
-            Serial.print(pswdSize);
-            Serial.print("-ditgit PIN to lock/unlock: ");
-          }
-        else 
-          {
+        if (trial < 3) {
+          Serial.print("Enter a ");
+          Serial.print(pswdSize);
+          Serial.print("-ditgit PIN to lock/unlock: ");
+        }
+        else {
           theft = true;    
-          }
-            
-          trial += 1;
-        }//end of else
+        }
+        trial += 1;
+      }
       memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
       inputIndex = 0; // reset inputIndex
-    }//end of if
-    
-  }//end of if
-  
+    }
+  }
   delay(10);
 
   // OUTPUTS
@@ -184,11 +166,11 @@ void loop() {
         digitalWrite(buzzer, LOW);
         digitalWrite(redLED, LOW);
         delay(200);
-      }//end of for loop
-    }//end of while
-  } //end of if
-  
-}//End of Loop
+      }
+    }
+  }
+}
+
 
 
 /*
@@ -202,32 +184,37 @@ void loop() {
  */
 int readKeyPresses(char * destination, int *index)
 {
-    int status = 0; 
+    int ErrorMarker = 0; 
     char keyPress;
-    int I = *index; //save the value of index into a variable we can manipulate
     if(destination == NULL)
     {
-      return status; //error
+      Serial.println("Destination is null!");
+      return ErrorMarker; //error status = 0
     }
 
     if(index == NULL)
     {
-      return status; //error
+      Serial.println("Index is null");
+      return ErrorMarker; //error status = 0
     }
-    
-    //Read in key-presses
+    if(((*index) >= 20) || ((*index) < 0)){
+      Serial.println("index is too large");
+      return ErrorMarker; //error status = 0
+    }
+
     keypadEvent e = customKeypad.read();
     
     if (e.bit.EVENT == KEY_JUST_PRESSED) 
     {
       keyPress = (char)e.bit.KEY; 
+      Serial.println("You entered: ");
+      Serial.println(keyPress);
       //Save it in input array
-      *(destination + *index) = keyPress; //save the key press back into the appropriate location in the desination array
-      *index = I++; //increment the index and save it back into the global variable
-      Serial.print(keyPress);
-
-      return index; // successful keyPress 
+      destination[*index] = keyPress; //save the key press back into the appropriate location in the desination array
+      (*index) = (*index) + 1; //increment the index and save it back into the global variable
+      Serial.println(destination);
+      ErrorMarker = 1;
+      return ErrorMarker; // successful keyPress, status is nonzero
     }
-
-    return status; //Error, status = 0
+    return ErrorMarker; //Error, status = 0
 }
