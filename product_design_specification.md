@@ -1,4 +1,4 @@
-# Product Design Specification (PDS) - Practicum HW #3
+# Product Design Specification (PDS) - Revision #3
 
 ## SeLo SECURITY LOCKER
 
