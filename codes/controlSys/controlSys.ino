@@ -2,7 +2,7 @@
 // Team 4: Hoang Nguyen, Ngan Ho, Jonathan Christian, Karla Barraza
 // Script to control the input (numpad) and outputs (LEDs, buzzers, motors) using the Atmel ATMega32U4 microprocessor
 
-#include <Adafruit_Keypad.h>
+#include <Adafruit_Keypad.h>`
 //#include <Adafruit_Keypad_Ringbuffer.h>
 #include <Servo.h>
 
@@ -25,10 +25,10 @@ char changePSWDKey[] = "****";//Command to change the password
 int pswdSize = 0;
 char inputpswd[MAXINPUT] = {}; //initiate input to empty 
 int inputIndex = 0;
-bool lock = false;
+bool lock = true;
 bool theft = false;
 int trial = 0;
-
+int timer = 0; 
 // OUTPUTS
 int buzzer = 2;
 int redLED = 4;
@@ -50,7 +50,10 @@ void setup(){
   pinMode(buzzer, OUTPUT);
   pinMode(redLED, OUTPUT);
   myservo.attach(servo);  // attaches the servo on pin 9 to the servo object
-  myservo.write(openPosition);
+  myservo.write(closePosition);
+  Serial.print("The servo is at position: ");
+  int i = myservo.read();
+  Serial.println(i);
 }
 
 void loop() {
@@ -62,6 +65,7 @@ void loop() {
   //if the door is open you can change the password
   if(myservo.read() == openPosition)
   {
+    //Serial.println("door is going through open door code");
     if(customKeypad.available())
     {
       char * destination = inputpswd;
@@ -74,7 +78,7 @@ void loop() {
         
         if(stringpswd == changePSWDKey)//now check if the password matches
         {
-          Serial.println("Ready to receive new password! Enter a 4-digit password");
+          Serial.println("Ready to recivee new password! Enter a 4-digit password");
           memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
           inputIndex = 0; // reset inputIndex
   
@@ -96,6 +100,13 @@ void loop() {
           Serial.println("This is the new password: ");
           Serial.print(password);
         }
+        else if (stringpswd == password) //if the password is entered while the door is open, it re-locks the door 
+        {
+          Serial.println("Lock is set to true 2");
+          lock = true; //Lock that door! 
+          memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
+          inputIndex = 0; // reset inputIndex 
+        }
         else 
         {
            memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
@@ -104,7 +115,9 @@ void loop() {
       }
     }
   }//Just generally read key presses 
-  else if(customKeypad.available()){
+  else
+  {
+    if(customKeypad.available()){
       char * destination = inputpswd;
       int * index = &inputIndex; 
       ErrorMarker = readKeyPresses(destination, index);
@@ -115,17 +128,20 @@ void loop() {
       String stringpswd = String(inputpswd); // Convert to stirng
 
       if (stringpswd == password) {
+        Serial.println("Lock is set to false 1");
+        lock = false;
         Serial.println("PIN IS CORRECT!");
         Serial.print("Enter a ");
         Serial.print(pswdSize);
         Serial.print("-ditgit PIN to lock/unlock: ");
-        lock = !(lock);
         trial = 0;
       }
       else{
+        Serial.println("Lock is set to true 1");
+        lock = true;
         Serial.print("PIN IS INCORRECT. ATTEMPTS LEFT: ");
-        Serial.println(3 - trial);
-        if (trial < 3) {
+        Serial.println(2 - trial);
+        if (trial < 2) {
           Serial.print("Enter a ");
           Serial.print(pswdSize);
           Serial.print("-ditgit PIN to lock/unlock: ");
@@ -139,18 +155,22 @@ void loop() {
       inputIndex = 0; // reset inputIndex
     }
   }
+  }
   delay(10);
 
   // OUTPUTS
   if (lock == false) {
+    //Serial.println("Door is now open!");
     myservo.write(openPosition);
   }
   if (lock == true) {
+   // Serial.println("Door is now closed!");
     myservo.write(closePosition);
   }
   if (theft == true) {
     unsigned char i;
-    while(1){
+
+    while(timer < 10){
       for(i=0;i<8;i++){
         digitalWrite(buzzer, HIGH);
         digitalWrite(redLED, HIGH);
@@ -167,7 +187,10 @@ void loop() {
         digitalWrite(redLED, LOW);
         delay(200);
       }
+      timer++;
     }
+    theft = false;
+    timer = 0;
   }
 }
 
@@ -213,6 +236,17 @@ int readKeyPresses(char * destination, int *index)
       destination[*index] = keyPress; //save the key press back into the appropriate location in the desination array
       (*index) = (*index) + 1; //increment the index and save it back into the global variable
       Serial.println(destination);
+
+      for(int i = 0; i < 2; i++)//Beepity beep
+      {
+        digitalWrite(buzzer, HIGH);
+        digitalWrite(redLED, HIGH);
+        Serial.println("Halfway through beepity beep");
+        delay(10);
+        digitalWrite(buzzer, LOW);
+        digitalWrite(redLED, LOW);
+        delay(10);
+      }
       ErrorMarker = 1;
       return ErrorMarker; // successful keyPress, status is nonzero
     }
