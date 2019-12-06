@@ -50,7 +50,7 @@ void setup(){
   pinMode(buzzer, OUTPUT);
   pinMode(redLED, OUTPUT);
   myservo.attach(servo);  // attaches the servo on pin 9 to the servo object
-  myservo.write(closePosition);
+  myservo.write(openPosition);
   Serial.print("The servo is at position: ");
   int i = myservo.read();
   Serial.println(i);
