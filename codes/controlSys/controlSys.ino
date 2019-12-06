@@ -2,7 +2,7 @@
 // Team 4: Hoang Nguyen, Ngan Ho, Jonathan Christian, Karla Barraza
 // Script to control the input (numpad) and outputs (LEDs, buzzers, motors) using the Atmel ATMega32U4 microprocessor
 
-#include <Adafruit_Keypad.h>`
+#include <Adafruit_Keypad.h>
 //#include <Adafruit_Keypad_Ringbuffer.h>
 #include <Servo.h>
 
@@ -241,8 +241,7 @@ int readKeyPresses(char * destination, int *index)
       {
         digitalWrite(buzzer, HIGH);
         digitalWrite(redLED, HIGH);
-        Serial.println("Halfway through beepity beep");
-        delay(10);
+        delay(10); // high chirpy noise, use longer delay for lower tone
         digitalWrite(buzzer, LOW);
         digitalWrite(redLED, LOW);
         delay(10);
