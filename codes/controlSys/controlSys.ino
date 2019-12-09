@@ -1,6 +1,10 @@
+
+  
 // ECE 411 Practicum
 // Team 4: Hoang Nguyen, Ngan Ho, Jonathan Christian, Karla Barraza
 // Script to control the input (numpad) and outputs (LEDs, buzzers, motors) using the Atmel ATMega32U4 microprocessor
+// Source: https://electronoobs.com/eng_arduino_tut103_code1.php
+
 
 #include <Adafruit_Keypad.h>
 //#include <Adafruit_Keypad_Ringbuffer.h>
@@ -19,13 +23,17 @@ char hexaKeys[ROWS][COLS] = {
 };
 byte rowPins[ROWS] = {12, 11, 10, 9};
 byte colPins[COLS] = {8, 7, 6, 5};
+
+// Initialize an instance of class Keypad
 Adafruit_Keypad customKeypad = Adafruit_Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
+//
 char password[] = "1234"; 
 char changePSWDKey[] = "****";//Command to change the password
 int pswdSize = 0;
 char inputpswd[MAXINPUT] = {}; //initiate input to empty 
 int inputIndex = 0;
 bool lock = true;
+bool is_door_locked = false;
 bool theft = false;
 int trial = 0;
 int timer = 0; 
@@ -34,12 +42,13 @@ int buzzer = 2;
 int redLED = 4;
 int servo = 3;
 Servo myservo;
-int closePosition = 180; //CHANGE ME
+int closePosition = 130; //CHANGE ME
 int openPosition = 90; //CHANGE ME
 
 void setup(){
+  
   // INPUTS
-  Serial.begin(9600);
+  Serial.begin(9600);     // Open the serial port at 9600 bps
   customKeypad.begin();
   pswdSize = sizeof(password)-1;
   Serial.print("Enter a ");
@@ -49,36 +58,49 @@ void setup(){
   // OUTPUTS
   pinMode(buzzer, OUTPUT);
   pinMode(redLED, OUTPUT);
-  myservo.attach(servo);  // attaches the servo on pin 9 to the servo object
+  myservo.attach(servo);  // attaches the servo on pin 3 to the servo object
   myservo.write(openPosition);
   Serial.print("The servo is at position: ");
-  int i = myservo.read();
-  Serial.println(i);
+  int i = myservo.read();// Read the angle of servo
+  Serial.println(i);      
 }
 
 void loop() {
+  
   // INPUTS
-  customKeypad.tick();
+  customKeypad.tick();  // Create a row pulses
   char keyPress;
- int ErrorMarker = 0; 
+ int ErrorMarker = 0;
 
   //if the door is open you can change the password
   if(myservo.read() == openPosition)
   {
     //Serial.println("door is going through open door code");
-    if(customKeypad.available())
+    if(customKeypad.available())                  //If a new button was detected 
     {
-      char * destination = inputpswd;
-      int * index = &inputIndex; 
-      ErrorMarker = readKeyPresses(destination, index);
+      char * destination = inputpswd;             //Point destination to an empty array inputpswd
+      int * index = &inputIndex;                  //index pointet contains an address of inputIndex
+      ErrorMarker = readKeyPresses(destination, index); //Put the value return by readKeyPresses funtion into ErrorMarker 
 
       if(inputIndex == sizeof(changePSWDKey) - 1)// -1 to account for null character at end of string
       {
+        
         String stringpswd = String(inputpswd); // Convert to stirng
         
         if(stringpswd == changePSWDKey)//now check if the password matches
         {
-          Serial.println("Ready to recivee new password! Enter a 4-digit password");
+
+          // beep some times to let the user know that he/she has enter a wrong one
+          for(int i=0;i<5;i++){
+            digitalWrite(buzzer, HIGH);
+            digitalWrite(redLED, HIGH);
+            delay(100);
+            digitalWrite(buzzer, LOW);
+            digitalWrite(redLED, LOW);
+            delay(20);
+          }
+          
+          Serial.println("Ready to recive new password! Enter a 4-digit password");
           memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
           inputIndex = 0; // reset inputIndex
   
@@ -99,19 +121,48 @@ void loop() {
           //At this point, the new four digit password has been entered
           Serial.println("This is the new password: ");
           Serial.print(password);
+          for(int i=0;i<5;i++){
+            digitalWrite(buzzer, HIGH);
+            digitalWrite(redLED, HIGH);
+            delay(100);
+            digitalWrite(buzzer, LOW);
+            digitalWrite(redLED, LOW);
+            delay(20);
+          }
         }
         else if (stringpswd == password) //if the password is entered while the door is open, it re-locks the door 
         {
+          // beep some times to let the user know that he/she has enter a wrong one
+          for(int i=0;i<3;i++){
+            digitalWrite(buzzer, HIGH);
+            digitalWrite(redLED, HIGH);
+            delay(100);
+            digitalWrite(buzzer, LOW);
+            digitalWrite(redLED, LOW);
+            delay(20);
+          }
+          
           Serial.println("Lock is set to true 2");
           lock = true; //Lock that door! 
           memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
           inputIndex = 0; // reset inputIndex 
         }
         else 
-        {
+        {   
+          // beep some times to let the user know that he/she has enter a wrong one
+          for(int i=0;i<3;i++){
+            digitalWrite(buzzer, HIGH);
+            digitalWrite(redLED, HIGH);
+            delay(100);
+            digitalWrite(buzzer, LOW);
+            digitalWrite(redLED, LOW);
+            delay(20);
+          }
+            
            memset(inputpswd, 0, sizeof(inputpswd)); // clear the inputData array
           inputIndex = 0; // reset inputIndex
         }
+        
       }
     }
   }//Just generally read key presses 
@@ -127,8 +178,19 @@ void loop() {
       inputpswd[inputIndex] = '\0'; // Add in null character for conversion to string
       String stringpswd = String(inputpswd); // Convert to stirng
 
+      // beep some times to let the user know that he/she has enter a wrong one
+      for(int i=0;i<3;i++){
+        digitalWrite(buzzer, HIGH);
+        digitalWrite(redLED, HIGH);
+        delay(100);
+        digitalWrite(buzzer, LOW);
+        digitalWrite(redLED, LOW);
+        delay(20);
+      }
+
       if (stringpswd == password) {
-        Serial.println("Lock is set to false 1");
+
+     //   Serial.println("Lock is set to false 1");
         lock = false;
         Serial.println("PIN IS CORRECT!");
         Serial.print("Enter a ");
@@ -137,7 +199,8 @@ void loop() {
         trial = 0;
       }
       else{
-        Serial.println("Lock is set to true 1");
+        
+    //    Serial.println("Lock is set to true 1");
         lock = true;
         Serial.print("PIN IS INCORRECT. ATTEMPTS LEFT: ");
         Serial.println(2 - trial);
@@ -161,11 +224,15 @@ void loop() {
   // OUTPUTS
   if (lock == false) {
     //Serial.println("Door is now open!");
-    myservo.write(openPosition);
+    if (myservo.read() != openPosition) {
+      myservo.write(openPosition);
+    }
   }
   if (lock == true) {
    // Serial.println("Door is now closed!");
-    myservo.write(closePosition);
+   if (myservo.read() != closePosition) {
+      myservo.write(closePosition);
+   }
   }
   if (theft == true) {
     unsigned char i;
@@ -194,11 +261,10 @@ void loop() {
   }
 }
 
-
-
 /*
  * INPUTS: 
- * char * destination     a pointer to the array we want to read keypresses into
+ * char * destination     a pointer to the array we want to read 
+ into
  * int * index            pointer to the index of the array that is to be read into
  * 
  * OUTPUTS: 
@@ -225,11 +291,11 @@ int readKeyPresses(char * destination, int *index)
       return ErrorMarker; //error status = 0
     }
 
-    keypadEvent e = customKeypad.read();
+    keypadEvent e = customKeypad.read();        // Get character was pressed
     
-    if (e.bit.EVENT == KEY_JUST_PRESSED) 
+    if (e.bit.EVENT == KEY_JUST_PRESSED)        // Send the character after release putton only to avoid problems
     {
-      keyPress = (char)e.bit.KEY; 
+      keyPress = (char)e.bit.KEY;               // Get a key is pressed and put it into keyPress
       Serial.println("You entered: ");
       Serial.println(keyPress);
       //Save it in input array
