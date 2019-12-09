@@ -18,7 +18,7 @@ The SeLo security locker is an affordable, wall-mounted option that allows for p
 -  MUST cost less than $40 to produce
 -  MUST be securable to a fixed surface (wall or floor)
 -  MUST be safe to manufacture
--  SHOULD be smaller than 12" x 12" x 5"
+-  SHOULD be smaller than 12" x 12" x 12"
 -  SHOULD be of rugged construction
 -  SHOULD have an backup/alternative method to open
 -  SHOULD be able to store at least 4 different passcodes
